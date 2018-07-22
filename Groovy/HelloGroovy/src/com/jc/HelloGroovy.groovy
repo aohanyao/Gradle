@@ -7,3 +7,8 @@ while (i < 10) {
     i++
     println(i)
 }
+sayHello()
+
+def sayHello() {
+    print("hello")
+}
