@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion rootProject.ext.android.mCompileSdkVersion
     defaultConfig {
         applicationId "com.jc.gradle"
-        minSdkVersion 19
-        targetSdkVersion 27
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion rootProject.ext.android.mMinSdkVersion
+        targetSdkVersion rootProject.ext.android.mTargetSdkVersion
+        versionCode rootProject.ext.android.mVersionCode
+        versionName rootProject.ext.android.mVersionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
