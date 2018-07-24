@@ -25,35 +25,49 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
-task hello(group: "learn") {
-    println("hello gradle")
-}
-
-task hello2(group: "learn", dependsOn: "hello") {
-
-    afterEvaluate {
-        println("-------------afterEvaluate start--------")
-        println("获取所有的项目")
-        tasks.forEach {
-            println("---${it.project.path}")
-        }
-        println("-------------afterEvaluate end--------")
-        println(android.mCompileSdkVersion)
-    }
-
-    doLast {
-        println("run on last")
-    }
-
-}
+//task hello(group: "learn") {
+//    println("hello gradle")
+//}
+//
+//task hello2(group: "learn", dependsOn: "hello") {
+//
+//    afterEvaluate {
+//        println("-------------afterEvaluate start--------")
+////        println("获取所有的项目")
+////        tasks.forEach {
+////            println("---${it.project.path}")
+////        }
+//        println("-------------afterEvaluate end--------")
+//        println(android.mCompileSdkVersion)
+//    }
+//
+//    doLast {
+//        println("run on last")
+//    }
+//
+//}
 ext {
     android = [
-            mCompileSdkVersion: 27,
+            mCompileSdkVersion: 26,
             mMinSdkVersion    : 19,
-            mTargetSdkVersion : 27,
+            mTargetSdkVersion : 26,
             mVersionCode      : 1,
             mVersionName      : "1.0.0"
     ]
 
 }
-task
+//this.getProjects()
+
+def getProjects() {
+    println("-------------------")
+    println("Root Project")
+    println("-------------------")
+    this.getAllprojects().eachWithIndex { Project entry, int i ->
+        if (i == 0) {
+            println("   Root Project----${entry.name}")
+        } else {
+            println("        +----------${entry.name}")
+        }
+
+    }
+}

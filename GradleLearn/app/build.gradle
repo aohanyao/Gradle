@@ -26,3 +26,51 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
+//
+///*配置开始之前执行*/
+//this.beforeEvaluate {
+//    println("配置开始之前执行")
+//
+//}
+///**配置完成之后执行*/
+//this.afterEvaluate {
+//    println("配置完成之后执行")
+//}
+///**gradle执行完成后回调*/
+//this.gradle.buildFinished {
+//    println("gradle执行完成后回调")
+//}
+
+//task helloTask(group: "learn") {
+//    doFirst {
+//        this.getAllprojects().forEach {
+//
+//            println("-------${it.name}")
+//        }
+//    }
+//}
+
+
+//        编译时长
+//def startBuildTime, endBuildTime
+//this.afterEvaluate {
+//    def preTask = project.tasks.getByName("preBuild")
+//    preTask.doFirst {
+//        startBuildTime = System.currentTimeMillis()
+//        println("----------------------开始build:${startBuildTime}")
+//
+//    }
+//
+//    def mBuildTask = project.tasks.getByName("build")
+//    mBuildTask.doLast {
+//        endBuildTime = System.currentTimeMillis()
+//        println("-----------------------Build耗费时长：${endBuildTime - startBuildTime}")
+//    }
+//}
+//        编译时长
+
+//        task 依赖
+
+//        task 依赖
+
+
